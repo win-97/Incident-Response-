@@ -1,0 +1,4 @@
+$logFilePath = "C:\Logs\DLLHijack\DLLHijack.evtx"
+Get-WinEvent -Path $logFilePath | Where-Object {$_.Id -eq 7 -and $_.Message -match "Signed:\sfalse"} | Format-List
+
+#One behavior is its unsigned status | in temp folder | in public / writable folder 
